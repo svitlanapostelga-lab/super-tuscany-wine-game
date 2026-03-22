@@ -1,0 +1,62 @@
+const superTuscanQuiz = [
+  {
+    question: "What is Super Tuscan wine regulation?",
+    options: {
+      a: "DOC",
+      b: "DOCG",
+      c: "Toscana IGT",
+      d: "Produced exclusively in North Italy"
+    },
+    correct: ["c"]
+  },
+  {
+    question: "Who likes to learn Super Tuscan wines about?",
+    options: {
+      a: "cat Thomas",
+      b: "Mariana",
+      c: "Svitlana",
+      d: "Linda"
+    },
+    correct: ["a"]
+  },
+  {
+    question: "What wine is produced in Tenuta San Guido?",
+    options: {
+      a: "Masseto",
+      b: "Sassicaia",
+      c: "Tignanello",
+      d: "Guidalberto"
+    },
+    correct: ["b", "d"]
+  },
+  {
+    question: "Who is the father who created Super Tuscan wine?",
+    options: {
+      a: "Marchese Mario Incisa della Rocchetta",
+      b: "Marchese Piero Antinori",
+      c: "Leonardo da Vinci",
+      d: "Giacomo Tachis"
+    },
+    correct: ["a"]
+  },
+  {
+    question: "What wine rose to the fame of the Bolgheri area?",
+    options: {
+      a: "Masseto",
+      b: "Sassicaia",
+      c: "Tignanello",
+      d: "Ornellaia"
+    },
+    correct: ["b", "d", "a"]
+  },
+  {
+    question: "What are non-Italian grapes?",
+    options: {
+      a: "Syrah",
+      b: "Cabernet Sauvignon",
+      c: "Sangiovese",
+      d: "Montepulciano"
+    },
+    correct: ["b", "a", "d"]
+  }
+];
