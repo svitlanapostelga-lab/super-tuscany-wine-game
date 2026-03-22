@@ -1,86 +1,13 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Super Tuscany Wine Quiz</title> <style> body { font-family: Arial, sans-serif; background-color: #f4f1ee; color: #3e2c1c; padding: 20px; } h1 { color: #7b3f00; } .quiz-container { max-width: 600px; margin: auto; background: #fff8f0; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); } .question { font-weight: bold; margin-bottom: 10px; } .answers { list-style-type: none; padding: 0; } .answers li { margin-bottom: 8px; } button { background-color: #7b3f00; color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; } button:hover { background-color: #a65c00; } .result { margin-top: 20px; font-weight: bold; } </style> </head> <body> <div class="quiz-container"> <h1>Super Tuscany Wine Quiz</h1> <div id="quiz"></div> <button id="submit">Submit</button> <div id="result" class="result"></div> </div>
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Super Tuscany Wine Quiz</title> <style> body { font-family: Arial, sans-serif; background-color: #f4f1ee; color: #3e2c1c; padding: 20px; } h1 { color: #7b3f00; } .quiz-container { max-width: 600px; margin: auto; background: #fff8f0; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); } .question { font-weight: bold; margin-bottom: 10px; } .answers { list-style-type: none; padding: 0; } .answers li { margin-bottom: 8px; } button { background-color: #7b3f00; color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; } button:hover { background-color: #a65c00; } .result { margin-top: 20px; font-weight: bold; } </style> </head> <body> <div class="quiz-container"> <h1>Super Tuscany Wine Quiz</h1> <div id="quiz"></div> <button id="submit">Submit</button> <div id="result" class="result"></div> </div> <script> const quizData = [ { question: "What is Super Tuscan wine regulation?", a: "DOC", b: "DOCG", c: "Toscana IGT", d: "Produced exclusively in North Italy", correct: "c" }, { question: "Who likes to learn Super Tuscan wines about?", a: "cat Thomas", b: "Mariana", c: "Svitlana", d: "Linda", correct: "a" }, { question: "What wine is produced in Tenuta San Guido?", a: "Masseto", b: "Sassicaia", c: "Tignanello", d: "Guidalberto", correct: ["b", "d"] }, { question: "Who is the father who created Super Tuscan wine?", a: "Marchese Mario Incisa della Rocchetta", b: "Marchese Piero Antinori", c: "Leonardo da Vinci", d: "Giacomo Tachis", correct: "a" } ]; const quiz = document.getElementById('quiz'); const submitBtn = document.getElementById('submit'); const result = document.getElementById('result'); function loadQuiz() { const output = []; quizData.forEach((currentQuestion, index) => { const answers = []; for (const letter of ['a', 'b', 'c', 'd']) { answers.push(<li><label><input type="checkbox" name="question${index}" value="${letter}"> ${currentQuestion[letter]}</label></li>); } output.push(<div class="question">${currentQuestion.question}</div><ul class="answers">${answers.join('')}</ul>); }); quiz.innerHTML = output.join(''); } function getResults() { let score = 0; quizData.forEach((currentQuestion, index) => { const selectedOptions = Array.from(document.querySelectorAll(input[name=question${index}]:checked)).map(input => input.value); if (Array.isArray(currentQuestion.correct)) { // Multiple correct answers if (selectedOptions.length === currentQuestion.correct.length && selectedOptions.every(val => currentQuestion.correct.includes(val))) { score++; } } else { // Single correct answer if (selectedOptions.length === 1 && selectedOptions[0] === currentQuestion.correct) { score++; } } }); result.textContent = You scored ${score} out of ${quizData.length}; } loadQuiz(); submitBtn.addEventListener('click', getResults); </script> </body> </html>
 
-<script>
-    const quizData = [
-        {
-            question: "Who is the father who created Super Tuscan wine?",
-            a: "Marchese Mario Incisa della Rocchetta",
-            b: "Marchese Piero Antinori",
-            c: "Leonardo da Vinci",
-            d: "Superman",
-            correct: "a"
-        },
-        {
-            question: "What wine is produced in Tenuta San Guido?",
-            a: "Masseto",
-            b: "Sassicaia",
-            c: "Tignanello",
-            d: "Solaia",
-            correct: "b"
-        },
-        {
-            question: "What is Super Tuscan wine regulation?",
-            a: "DOC",
-            b: "DOCG",
-            c: "Toscana IGT",
-            d: "Produced exclusively in North Italy",
-            correct: "c"
-        },
-        {
-            question: "Which grape varieties are commonly used in Super Tuscan wines?",
-            a: "Sangiovese, Cabernet Sauvignon, Merlot",
-            b: "Pinot Grigio and Chardonnay",
-            c: "Nebbiolo and Barbera",
-            d: "Zinfandel and Malbec",
-            correct: "a"
-        },
-        {
-            question: "Who likes to learn Super Tuscan wines about?",
-            a: "Thomas",
-            b: "Mariana",
-            c: "Svitlana",
-            d: "Linda",
-            correct: "a"
+        // Question 4
+        const q4 = document.querySelector('input[name="q4"]:checked');
+        if (q4 && q4.value === "Sassicaia") {
+            score++;
         }
-    ];
 
-    const quiz = document.getElementById('quiz');
-    const submitBtn = document.getElementById('submit');
-    const result = document.getElementById('result');
-
-    function loadQuiz() {
-        const output = [];
-        quizData.forEach((currentQuestion, index) => {
-            const answers = [];
-            for (letter in currentQuestion) {
-                if (letter === 'a' || letter === 'b' || letter === 'c' || letter === 'd') {
-                    answers.push(
-                        `<li><label><input type="radio" name="question${index}" value="${letter}"> ${currentQuestion[letter]}</label></li>`
-                    );
-                }
-            }
-            output.push(
-                `<div class="question">${currentQuestion.question}</div><ul class="answers">${answers.join('')}</ul>`
-            );
-        });
-        quiz.innerHTML = output.join('');
+        document.getElementById('result').textContent = `You scored ${score} out of ${total}.`;
     }
-
-    function getResults() {
-        let score = 0;
-        quizData.forEach((currentQuestion, index) => {
-            const selector = `input[name=question${index}]:checked`;
-            const userAnswer = (document.querySelector(selector) || {}).value;
-            if (userAnswer === currentQuestion.correct) {
-                score++;
-            }
-        });
-        result.textContent = `You scored ${score} out of ${quizData.length}`;
-    }
-
-    loadQuiz();
-
-    submitBtn.addEventListener('click', getResults);
 </script>
 
 </body> </html>
